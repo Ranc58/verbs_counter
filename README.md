@@ -71,8 +71,8 @@ And another funcs.
 
 Folders `flask` and `django` already in check list, but we need add `myproject`.\
 Run check:\
-`$ python3 dclint.py myproject`
-Result:\
+`$ python3 dclint.py myproject`\
+Result:
 ````
 dirpath: ./myproject:
 total ".py" files count: 1
