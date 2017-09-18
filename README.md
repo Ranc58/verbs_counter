@@ -42,7 +42,7 @@ We have some folders structure with `dclint.py`:
 │   │   ├──html5shiv.min.js
 │   │   ├──thrash.py
 │   
-├──myproject
+├── myproject
 │   ├──ie-emulation-modes-warning.js
 │   ├──old_version.py
 │   ├──new_file.py
