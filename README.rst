@@ -26,8 +26,10 @@ How to use
 | ``$ verbs``
 | If you want add your project folders, print it space-separated:
 | ``$ verbs -p myproject1 myproject2``
-| If you want check all funcs names:
-| ``verbs -a``
+| If you want check all funcs names(not only verbs):
+| ``$ verbs -a``
+| You can use all arguments together:
+| ``$ verbs -a -p myproject1 myproject2``
 
 Usage example:
 ==============
