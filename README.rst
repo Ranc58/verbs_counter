@@ -1,7 +1,7 @@
 Verbs in func names counter
 ===========================
 
-| This script calculate verbs count in func names in ``.py`` files.
+| This script calculate verbs count(optionaly all words) in func names in ``.py`` files.
 | Script check all folders recursively. Default folder names for
   search:\
 | *django, flask, pyramid, reddit, requests, sqlalchemy.*\
