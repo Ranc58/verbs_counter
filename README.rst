@@ -1,16 +1,15 @@
 Verbs in func names counter
 ===========================
 
-| This script calculate verbs count in func names in ``.py`` files.
-| Script check all folders recursively. Default folder names for
-  search:\
-| *django, flask, pyramid, reddit, requests, sqlalchemy.*\
-| You can add your folders to check list.
+| This script calculate words count (nouns and verbs) in funcs and vars names in ``.py`` files.
+| Script check all folders recursively.
+| Script can clone repo from github&
+
 
 How to install
 ==============
 
-| Run ``pip3 install verb-counter``
+| Run ``pip3 install words_counter``
 | Run on CLI for update nltk if it need:\
 
 ::
@@ -22,12 +21,18 @@ How to install
 How to use
 ==========
 
-| If you want check default folders:\
-| ``$ verbs``
-| If you want add your project folders, print it space-separated:
-| ``$ verbs -p myproject1 myproject2``
-| If you want check all funcs names:
-| ``verbs -a``
+| Script have some arguments to run:
+| ``-p`` - Projects dirpathes.
+| ``--all_names`` - Get all vars and funcs names.
+| ``--by_type`` - Get all info by word type.
+| ``--top_names`` - Get top funcs and vars names.
+| ``-d`` - Clone code from outsource(Github in this version, need repo URL and pathway to create folder)
+| ``-t`` - Add word type for search. Avaliable types: NN(Noun), NNS(Nouns), VB(Verb).
+| ``--data_type`` - Structure to search choice. Available funcs or vars.
+| ``--cli`` - Output result to CLI.
+| ``--json`` - Output result to JSON file(need pathway to create json file).
+| ``--csv`` - Output result to CSV file(need pathway to create csv file).
+| `Attention!` In current version ``-t`` and ``--data_type`` required, only if you don't want use ``-d``.
 
 Usage example:
 ==============
@@ -60,49 +65,42 @@ We have some folders structure with ``dclint.py``:
 
 ::
 
-    def get_all_names(names):
-        for name in names:
-            print('name: {name}'.format(name=name))
+    def foo():
+       test_var1 = 'test'
+       return test_var1
+
 
 ::
 
-    def give_money(user, money):
-        print('{user} now have {money} $'.format(user=user,
-         money=money))
+    def bar():
+        test_var2 = 'haha'
+        return test_var2
 
 ::
 
-    def check_exist(folder):
-        if os.path.exist(folder):
-            return True
+    if __name__ == '__main__':
+        foo_var = foo()
+        bar_var = bar()
+
 
 And another funcs.
 
-| Folders ``flask`` and ``django`` already in check list, but we need
-  add ``myproject``.\
-| Run check:\
-| ``$ verbs -p myproject``\
+| Run check(for example from project folder):\
+| ``$ python words_counter -p myproject -t vb --data_type funcs --all_names --cli``\
 | Result:
 
 ::
 
-    dirpath: ./myproject:
-    total ".py" files count: 1
-    verb "get" count: 1
-    ------------
-    dirpath: ./django:
-    total ".py" files count: 3
-    verb "get" count: 3
-    verb "give" count: 2
-    ------------
-    dirpath: ./flask:
-    total ".py" files count: 1
-    verb "get" count: 1
-    ------------
-    total verbs: 4
-    unique verbs: 2
-    "get" in 3 projects
-    "give" in 1 projects
+    project: myproject
+    funcs names:
+            foo
+            bar
+    vars names:
+            test_var1
+            test_var2
+            foo_var
+            bar_var
+
 
 License
 =======
