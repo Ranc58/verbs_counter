@@ -1,4 +1,4 @@
-Verbs in func names counter
+Words in names counter
 ===========================
 
 | This script calculate words count (nouns and verbs) in funcs and vars names in ``.py`` files.
