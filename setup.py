@@ -17,7 +17,7 @@ setup(
     },
     install_requires=[
         'six==1.11.0',
-        'nltk==3.2.4',
+        'nltk==3.4.5',
         'GitPython==2.1.7',
     ],
     test_suite='words_counter.tests',
